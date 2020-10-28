@@ -45,39 +45,6 @@ src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
 <script 
 nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
 </script>
-    
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-
-    <script id="rendered-js">
-      function enhanceWithARQuickLook() {
-        // check for AR support
-        const a = document.createElement("a"),
-          supportsAR = a.relList.supports("ar") ? true : false;
-
-        // if the host device supports AR Quick Look...
-        if (supportsAR) {
-          const attr = "data-ar-fp",
-            elements = document.querySelectorAll("[" + attr + "]");
-
-          // if there are AR-ready links on the page...
-          if (elements.length > 0) {
-            // convert AR-ready links
-            for (var i in elements) {
-              const instance = elements[i],
-                a = document.createElement("a");
-              a.setAttribute("href", instance.getAttribute(attr));
-              a.setAttribute("rel", "ar");
-              instance.removeAttribute(attr);
-              instance.parentNode.insertBefore(a, instance);
-              a.appendChild(instance);
-            }
-          }
-        }
-      }
-
-      enhanceWithARQuickLook();
-      //# sourceURL=pen.js
-    </script>
     <model-viewer src="https://cdn.glitch.com/ea8aad0f-c4ad-4fee-b2aa-0174986b2895%2Fchair.glb?v=1569230891112"
 ios-src="https://github.com/Giorat/dope-chair-model-viewer/raw/master/model/chair.usdz"
 alt="a 3D model of a chair" auto-rotate camera-controls ar magic-leap unstable-webxr>
